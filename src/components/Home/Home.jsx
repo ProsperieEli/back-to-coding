@@ -6,7 +6,7 @@
     
     function Home() {
       return (
-        <div>Home. This is a test. Does this work?</div>
+        <div></div>
       )
     }
     
