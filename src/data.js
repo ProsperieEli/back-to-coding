@@ -10,6 +10,8 @@ const gameCatelog = [
         release_year: 2017,
         developer: 'Nintendo',
         publisher: 'Nintendo',
+        isFavorited: false
+
     },
     {
         name: 'Sonic Frontiers',
@@ -22,6 +24,7 @@ const gameCatelog = [
         release_year: 2021,
         developer: 'Sega',
         publisher: 'Sega',
+        isFavorited: false
     },
     {
         name: 'Resident Evil 4',
@@ -34,6 +37,8 @@ const gameCatelog = [
         release_year: 2023,
         developer: 'Capcom',
         publisher: 'Capcom',
+        isFavorited: false
+
     }
 ];
 

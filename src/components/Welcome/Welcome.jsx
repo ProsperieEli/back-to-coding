@@ -3,21 +3,37 @@
     A button that takes the user to the next page and a form to take down their username
     */
 
-    import React from 'react'
+    import React, { useEffect, useState } from 'react'
 import welcometext from './IntroText'
-import logo from '../../logo.svg'
+import { Link } from 'react-router-dom'
 import './Welcome.css'    
-    function Welcome() {
-      return (
-        <>
-        <div>{welcometext}</div>
-      <div className='intro'>
-      <img src="elden-ring-cover-art.jpg" alt="Elden Ring" />
-      <img src="God-of-War.jpg" alt="God of War" />
-      <img src="Resident_Evil_4_remake_cover_art.jpg" alt="Resident Evil 4 Remake" />
-    </div>
+
+function Welcome() {
+      const [currentImage, setCurrentImage] = useState(0)
+      const imagePaths = ["Resident_Evil_4_remake_cover_art.jpg","God-of-War.jpg", "elden-ring-cover-art.jpg",]
+      
+      useEffect(() => {
+        const intervalId = setInterval(() => {
+          setCurrentImage(currentImage => (currentImage + 1) % imagePaths.length);
+        }, 3000);
+        return () => clearInterval(intervalId);
+      }, []);
     
-        </>
+
+      return (
+        <div className='website'>
+          <p>{welcometext}</p>
+      <div className='carousel-container'>
+        <div className='carousel-wrapper' style={{left: `-${currentImage * 100}%` }}>
+        {imagePaths.map((path) =>
+        <img src={path} alt='game cover art' key={path} />)}
+        </div>
+          <div>
+
+          </div>
+          </div>
+        <Link to='/Login' className='btn btn-primary'>Ready to begin?</Link>
+          </div>
       )
     }
     
