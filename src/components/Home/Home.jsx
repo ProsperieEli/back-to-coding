@@ -3,10 +3,23 @@
     */
 
     import React from 'react'
-    
+    import gameCatelog from '../../data'
+
     function Home() {
+      
       return (
-        <div></div>
+        <div>
+          {gameCatelog.map((game) =>{
+            return (
+              <div>
+                <h1>{game.title}</h1>
+                <img src={game.image} alt={game.title} />
+                <p>{game.description}</p>
+                <button>Favorite?</button>
+              </div>
+            )
+          })}
+        </div>
       )
     }
     

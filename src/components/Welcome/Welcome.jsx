@@ -5,10 +5,10 @@
 
     import React, { useEffect, useState } from 'react'
 import welcometext from './IntroText'
-import logo from '../../logo.svg'
-import './Welcome.css'    
 import { Link } from 'react-router-dom'
-    function Welcome() {
+import './Welcome.css'    
+
+function Welcome() {
       const [currentImage, setCurrentImage] = useState(0)
       const imagePaths = ["Resident_Evil_4_remake_cover_art.jpg","God-of-War.jpg", "elden-ring-cover-art.jpg",]
       
@@ -22,16 +22,18 @@ import { Link } from 'react-router-dom'
 
       return (
         <div className='website'>
-      <div>{welcometext}</div>
+          <p>{welcometext}</p>
       <div className='carousel-container'>
         <div className='carousel-wrapper' style={{left: `-${currentImage * 100}%` }}>
         {imagePaths.map((path) =>
         <img src={path} alt='game cover art' key={path} />)}
         </div>
-    </div>  
+          <div>
 
-    <button>Ready to browse?</button>
-        </div>
+          </div>
+          </div>
+        <Link to='/Login' className='btn btn-primary'>Ready to begin?</Link>
+          </div>
       )
     }
     
