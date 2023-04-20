@@ -1,0 +1,8 @@
+.games {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -10px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
